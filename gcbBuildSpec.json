@@ -1,0 +1,19 @@
+{
+  "steps": [
+    {
+      "name": "gcr.io/cloud-builders/git",
+      "args": ["clone", "https://github.com/vasile-glijin-harness/gcb.git", "."]
+    },
+    {
+      "name": "gcr.io/cloud-builders/gradle",
+      "entrypoint": "gradle",
+      "args": ["build"]
+    },
+    {
+      "name": "gcr.io/cloud-builders/docker",
+      "args": ["build", "-t", "gcr.io/$PROJECT_ID/v-image", "--build-arg=JAR_FILE=build/libs/playground-0.0.1.jar", "."]
+    }
+  ],
+  "options": {"logStreamingOption": "STREAM_ON"},
+  "images": ["gcr.io/$PROJECT_ID/v-image"]
+}
