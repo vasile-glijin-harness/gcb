@@ -1,4 +1,5 @@
-{
+
+ {
   "steps": [
     {
       "name": "gcr.io/cloud-builders/git",
@@ -15,5 +16,17 @@
     }
   ],
   "options": {"logStreamingOption": "STREAM_ON"},
-  "images": ["gcr.io/$PROJECT_ID/v-image"]
+  "images": ["gcr.io/$PROJECT_ID/v-image"],
+   "tags": [
+      "TAG1",
+      "TAG2"
+   ],
+   "artifacts": {
+      "objects": {
+         "location": "gs://gcb-playgound",
+         "paths": [
+            "build/libs/playground-0.0.1.jar"
+         ]
+      }
+   }
 }
