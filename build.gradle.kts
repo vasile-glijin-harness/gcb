@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "com.harness.gcb"
-version = "0.0.1"
+version = "0.0.3"
 
 application {
     mainClassName = "io.ktor.server.netty.EngineMain"
