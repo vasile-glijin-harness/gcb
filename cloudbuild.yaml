@@ -7,7 +7,7 @@ steps:
 options:
   logStreamingOption: STREAM_ON
 images: ['gcr.io/$PROJECT_ID/v-image']
-tags: ["TAG1", "TAG2"]
+tags: [${TAG1}, ${TAG2}]
 artifacts:
   objects:
     location: "gs://gcb-playgound"
